@@ -1,7 +1,6 @@
-//
-// Sample outputs
-//
-
+import {updateGameScore, decideGameWinner, printScore} from './main'
+import {expect} from 'chai';
+import 'mocha';
 
 describe('Player 1', () => {
   it('should win the game when the score is 4-0', () => {
@@ -14,7 +13,7 @@ describe('Player 1', () => {
     const winner = decideGameWinner(game);
 
     // then
-    expect(winner).toEqual('Player 1');
+    expect(winner).equal('Player 1');
   });
 
   it('should win the game when the score is 5-3', () => {
@@ -27,7 +26,7 @@ describe('Player 1', () => {
     const winner = decideGameWinner(game);
 
     // then
-    expect(winner).toEqual('Player 1');
+    expect(winner).equal('Player 1');
   });
 });
 
@@ -42,7 +41,7 @@ describe('Player 2', () => {
     const winner = decideGameWinner(game);
 
     // then
-    expect(winner).toEqual('Player 2');
+    expect(winner).equal('Player 2');
   });
 
   it('should win the game when the score is 3-5', () => {
@@ -55,7 +54,7 @@ describe('Player 2', () => {
     const winner = decideGameWinner(game);
 
     // then
-    expect(winner).toEqual('Player 2');
+    expect(winner).equal('Player 2');
   });
 });
 
@@ -69,7 +68,7 @@ describe('Game', () => {
     const score = printScore([player1Points, player2Points]);
 
     // then
-    expect(score).toEqual('thirty - thirty');
+    expect(score).equal('thirty - thirty');
   });
 
   it('should print deuce when the score is 3-3', () => {
@@ -81,7 +80,7 @@ describe('Game', () => {
     const score = printScore([player1Points, player2Points]);
 
     // then
-    expect(score).toEqual('deuce');
+    expect(score).equal('deuce');
   });
 
   it('should print advantage player 1 when the score is 4-3', () => {
@@ -93,7 +92,7 @@ describe('Game', () => {
     const score = printScore([player1Points, player2Points]);
 
     // then
-    expect(score).toEqual('advantage player 1');
+    expect(score).equal('advantage player 1');
   });
 
   it('should print advantage player 2 when the score is 5-6', () => {
@@ -105,6 +104,6 @@ describe('Game', () => {
     const score = printScore([player1Points, player2Points]);
 
     // then
-    expect(score).toEqual('advantage player 2');
+    expect(score).equal('advantage player 2');
   });
 });
